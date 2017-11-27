@@ -84,7 +84,6 @@ def list_cases_json(request):
     
     result = {"Records": [ {'Contrato':'121314','Nombre':'sd','Alias':'fd','Fecha':'df'} ], "Result":"OK","TotalRecordCount":'1'}
     
-    print result
     return HttpResponse(json.dumps(result)) 
 
 def list_cases(request):
