@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd">
+    <head>
+    
+    
+    
+            <link href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <script               src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+    
+        <script
+			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+			  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+			  crossorigin="anonymous"></script>
+
+			  <link href="/static/js/jtable/themes/lightcolor/blue/jtable.css" rel="stylesheet" type="text/css" />
+			  <link href="/static/js/jtable/themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css" />
+	
+	<script
+			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+			  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+			  crossorigin="anonymous"></script>
+
+	<script src="/static/js/jtable/jquery.jtable.js" type="text/javascript"></script>
+</head>
+<body>
+hola
+<div id="StudentTableContainer" style="width: 90%;"></div>
+        
+<script type='text/javascript'>
+jQuery(document).ready(function($){
+	
+	
+	
+	
+////// jtable
+
+
+        $('#StudentTableContainer').jtable({
+            title: 'Fired checks From sensor {{nombre}}',
+            paging: true, //Enable paging
+            sorting: false, //Enable sorting
+            create: true,
+            //defaultSorting: 'Name ASC',
+            //openChildAsAccordion: true, //Enable this line to show child tabes as accordion style
+            actions: {
+                listAction: '/list_cases_json/',
+                createAction: '/nuevo_check/sensorid=',
+            },
+            fields: {
+                                        Contrato: {
+                                            key: true,
+                                            title: 'contrato',
+                                            width: '15%',
+                                            create: false,
+                                            edit: false
+                                        },
+                                        Alias: {
+                                            title: 'alias',
+                                            width: '40%'
+                                        },
+                                        Nombre: {
+                                            title: 'nombre',
+                                            width: '40%'
+                                        },
+                                        Timestamp: {
+                                            title: 'fecha',
+                                            width: '30%'
+                                        },
+                                    }
+            
+        });
+        
+        //Load student list from server
+        $('#StudentTableContainer').jtable('load');
+});
+
+
+
+</script>
+
+
+
+	<title>CheckBoy</title>
+
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    </head>
+
+    <body>
