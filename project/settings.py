@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
